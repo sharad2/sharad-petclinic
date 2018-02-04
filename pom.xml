@@ -99,6 +99,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			<!-- https://wro4j.readthedocs.io/en/stable/MavenPlugin/ -->
       <plugin>
         <groupId>ro.isdc.wro4j</groupId>
         <artifactId>wro4j-maven-plugin</artifactId>
@@ -117,6 +118,9 @@
           <wroFile>${basedir}/src/main/wro/wro.xml</wroFile>
           <extraConfigFile>${basedir}/src/main/wro/wro.properties</extraConfigFile>
           <contextFolder>${basedir}/src/main/less</contextFolder>
+          <!-- ignoreMissingResources if false, the build will fail if at least one resource is missing or cannot be accessed,
+           otherwise only a warning will be displayed -->
+          <ignoreMissingResources>false</ignoreMissingResources>
         </configuration>
         <dependencies>
           <dependency>
