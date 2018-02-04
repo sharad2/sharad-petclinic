@@ -18,6 +18,8 @@ package com.example.demo.vet;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.Map;
@@ -48,8 +50,18 @@ class VetController {
         return "vets/vetList";
     }
 
-    @GetMapping({ "/vets.json", "/vets.xml" })
-    public @ResponseBody Vets showResourcesVetList() {
+    //@GetMapping({ "/vets.json", "/vets.xml" })
+    @RequestMapping(value = "/vets.json", method = RequestMethod.GET, produces = "application/json")
+    public @ResponseBody Vets jsonResourcesVetList() {
+        // Here we are returning an object of type 'Vets' rather than a collection of Vet
+        // objects so it is simpler for JSon/Object mapping
+        Vets vets = new Vets();
+        vets.getVetList().addAll(this.vets.findAll());
+        return vets;
+    }
+    
+    @RequestMapping(value = "/vets.xml", method = RequestMethod.GET, produces = "application/xml")
+    public @ResponseBody Vets xmlResourcesVetList() {
         // Here we are returning an object of type 'Vets' rather than a collection of Vet
         // objects so it is simpler for JSon/Object mapping
         Vets vets = new Vets();
