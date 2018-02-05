@@ -127,6 +127,9 @@
 	<profiles>
 		<profile>
 			<id>hsqldb</id>
+			<properties>
+				<database>hsqldb</database>
+			</properties>
 			<activation>
 				<activeByDefault>true</activeByDefault>
 			</activation>
@@ -136,6 +139,7 @@
 					<artifactId>hsqldb</artifactId>
 					<scope>runtime</scope>
 				</dependency>
+
 			</dependencies>
 		</profile>
 		<profile>
