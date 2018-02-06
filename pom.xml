@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	
+	<!-- 
+	Profile hsqldb runs on a local in memory database
+	Profile gcloudmysql runs on a preconfigured google cloud database
+	Deploy to google cloud via command line: mvnw -DskipTests=true -P gcloudmysql appengine:deploy
+	 -->
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.example</groupId>
@@ -137,6 +143,12 @@
 			</dependencies>
 		</profile>
 		<profile>
+		<!-- 
+		Run locally using gcloud mysql database or deploy app to google flexible app engine and run
+		via https://spring-pet-clinic-sharad.appspot.com/
+		The steps for accomplishing this were inspired by:
+		https://cloud.google.com/community/tutorials/run-spring-petclinic-on-app-engine-cloudsql
+		 -->
 			<id>gcloudmysql</id>
 			<properties>
 				<database>mysql</database>
@@ -150,6 +162,17 @@
 					<version>1.0.3</version>
 				</dependency>
 			</dependencies>
+			<build>
+				<plugins>
+					<!-- Maven plugin to deploy application to Google Cloud App Engine Environment -->
+					<!-- https://mvnrepository.com/artifact/com.google.cloud.tools/appengine-maven-plugin -->
+					<plugin>
+						<groupId>com.google.cloud.tools</groupId>
+						<artifactId>appengine-maven-plugin</artifactId>
+						<version>1.3.0</version>
+					</plugin>
+				</plugins>
+			</build>
 		</profile>
 	</profiles>
 
