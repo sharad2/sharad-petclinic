@@ -19,12 +19,12 @@
         <tbody>
           <tr th:each="owner : ${selections}">
               <td>
-                  <a th:href="@{/owners/__${owner.id}__}" th:text="${owner.firstName + ' ' + owner.lastName}"/></a>
+                  <a th:href="@{/owners/__${owner.id}__}" th:text="${owner.firstName + ' ' + owner.lastName}"></a></a>
               </td>
-              <td th:text="${owner.address}"/>
-              <td th:text="${owner.city}"/>
-              <td th:text="${owner.telephone}"/>
-              <td><span th:each="pet : ${owner.pets}" th:text="${pet.name} "/></td>
+              <td th:text="${owner.address}"></td>
+              <td th:text="${owner.city}"></td>
+              <td th:text="${owner.telephone}"></td>
+              <td><span th:each="pet : ${owner.pets}" th:text="${pet.name} "></span></td>
           </tr>
         </tbody>
     </table>
