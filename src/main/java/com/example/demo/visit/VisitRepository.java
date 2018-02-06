@@ -15,11 +15,11 @@
  */
 package com.example.demo.visit;
 
-import java.util.List;
-
+import com.example.demo.model.BaseEntity;
 import org.springframework.dao.DataAccessException;
 import org.springframework.data.repository.Repository;
-import com.example.demo.model.BaseEntity;
+
+import java.util.List;
 
 /**
  * Repository class for <code>Visit</code> domain objects All method names are compliant with Spring Data naming

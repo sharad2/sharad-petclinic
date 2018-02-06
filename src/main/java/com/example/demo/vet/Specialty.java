@@ -15,12 +15,11 @@
  */
 package com.example.demo.vet;
 
-import java.io.Serializable;
+import com.example.demo.model.NamedEntity;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
-
-import com.example.demo.model.NamedEntity;
+import java.io.Serializable;
 
 /**
  * Models a {@link Vet Vet's} specialty (for example, dentistry).

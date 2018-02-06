@@ -15,10 +15,10 @@
  */
 package com.example.demo.owner;
 
+import com.example.demo.model.NamedEntity;
+
 import javax.persistence.Entity;
 import javax.persistence.Table;
-
-import com.example.demo.model.NamedEntity;
 
 /**
  * @author Juergen Hoeller

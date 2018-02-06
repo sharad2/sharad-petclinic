@@ -18,7 +18,9 @@ package com.example.demo.model;
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;;
+import javax.validation.constraints.Size;
+
+;
 
 /**
  * Simple JavaBean domain object representing an person.
