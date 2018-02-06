@@ -149,11 +149,6 @@
 					<artifactId>mysql-socket-factory</artifactId>
 					<version>1.0.3</version>
 				</dependency>
-				<dependency>
-					<groupId>mysql</groupId>
-					<artifactId>mysql-connector-java</artifactId>
-					<scope>runtime</scope>
-				</dependency>
 			</dependencies>
 		</profile>
 	</profiles>
