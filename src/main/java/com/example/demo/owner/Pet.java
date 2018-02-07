@@ -22,6 +22,8 @@ import org.springframework.beans.support.PropertyComparator;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+
 import java.util.*;
 
 /**
@@ -43,6 +45,7 @@ public class Pet extends NamedEntity {
 	@Column(name = "birth_date")
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern = "yyyy-MM-dd")
+	@NotNull
     private Date birthDate;
 
     @ManyToOne

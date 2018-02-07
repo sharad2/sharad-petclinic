@@ -17,6 +17,8 @@ package com.example.demo.model;
 
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 
 /**
@@ -34,6 +36,8 @@ public class NamedEntity extends BaseEntity {
 	 */
 	private static final long serialVersionUID = 1L;
 	@Column(name = "name")
+	@NotNull
+	@Size(min=2, max=30)
     private String name;
 
     public String getName() {
