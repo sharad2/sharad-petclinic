@@ -6,6 +6,7 @@
 	Profile hsqldb runs on a local in memory database
 	Profile gcloudmysql runs on a preconfigured google cloud database
 	Deploy to google cloud via command line: mvnw -DskipTests=true -P gcloudmysql appengine:deploy
+	Run the existing install in google cloud: https://spring-pet-clinic-sharad.appspot.com/vets
 	 -->
 	<modelVersion>4.0.0</modelVersion>
 
