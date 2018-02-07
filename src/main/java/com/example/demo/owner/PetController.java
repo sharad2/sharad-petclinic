@@ -60,10 +60,10 @@ class PetController {
         dataBinder.setDisallowedFields("id");
     }
 
-    @InitBinder("pet")
-    public void initPetBinder(WebDataBinder dataBinder) {
-        dataBinder.setValidator(new PetValidator());
-    }
+//    @InitBinder("pet")
+//    public void initPetBinder(WebDataBinder dataBinder) {
+//        dataBinder.setValidator(new PetValidator());
+//    }
 
     @GetMapping("/pets/new")
     public String initCreationForm(Owner owner, ModelMap model) {
