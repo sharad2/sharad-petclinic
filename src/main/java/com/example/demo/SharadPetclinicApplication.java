@@ -2,8 +2,11 @@ package com.example.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso;
 
 @SpringBootApplication
+//To make the link to Facebook we need an @EnableOAuth2Sso annotation on our main class:
+@EnableOAuth2Sso
 public class SharadPetclinicApplication {
 
 	public static void main(String[] args) {
