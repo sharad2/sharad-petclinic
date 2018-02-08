@@ -5,4 +5,4 @@ Deploy to google cloud via command line: mvnw -DskipTests=true -P gcloudmysql ap
 Google doc tutorial: https://cloud.google.com/community/tutorials/run-spring-petclinic-on-app-engine-cloudsql
 Run the existing install in google cloud: https://spring-pet-clinic-sharad.appspot.com/vets
 
-TODO: https://spring.io/guides/gs/authenticating-ldap/
+8 Feb 2017: Social logins https://spring.io/guides/tutorials/spring-boot-oauth2/
