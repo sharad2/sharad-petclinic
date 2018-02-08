@@ -1,32 +1,28 @@
 <!DOCTYPE html>
 
 <html xmlns:th="http://www.thymeleaf.org"
-	th:replace="~{fragments/layout :: layout (~{::body},'home')}">
+	th:replace="~{fragments/layout :: layout (~{::#main},'home')}">
 
 <body>
-
-	<h2 th:text="#{welcome}">Welcome</h2>
-	<div class="row">
-		<div class="col-md-12">
-			<img class="img-responsive" src="../static/resources/images/pets.png"
-				th:src="@{/resources/images/pets.png}" />
+	<div id="main">
+		<h2 th:text="#{welcome}">Welcome</h2>
+		<div class="row">
+			<div class="col-md-12">
+				<img class="img-responsive"
+					src="../static/resources/images/pets.png"
+					th:src="@{/resources/images/pets.png}" />
+			</div>
 		</div>
+		<ol>
+			<li><a href="/login/facebook">Facebook Login</a></li>
+			<li><a href="/login/github">Github Login</a></li>
+			<li>
+				<form action="/logout">
+					<button type="submit" class="btn btn-primary">Logout</button>
+				</form>
+			</li>
+		</ol>
 	</div>
-	<ol>
-		<li><a href="/login/facebook">Facebook Login</a></li>
-		<li>With Github: <a href="/login/github">click here</a></li>
-		<li><a href="/logout">Logout</a></li>
-		<li>
-		<button onClick="logout()" class="btn btn-primary">Logout</button>
-		</li>
-	</ol>
-	
-	<script type="text/javascript">
-	var logout = function() {
-	    $.post("/logout");
-	    return true;
-	}	
-	</script>
 </body>
 
 </html>
