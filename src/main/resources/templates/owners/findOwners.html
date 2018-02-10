@@ -1,8 +1,8 @@
-<html xmlns:th="http://www.thymeleaf.org"
-  th:replace="~{fragments/layout :: layout (~{::body},'owners')}">
-
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/layout :: head">
+</head>
 <body>
-
+<div th:replace="fragments/layout :: menu('owners')"></div>
   <h2>Find Owners</h2>
 
   <form th:object="${owner}" th:action="@{/owners}" method="get"

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 
-<html xmlns:th="http://www.thymeleaf.org"
-  th:replace="~{fragments/layout :: layout (~{::body},'vets')}">
-
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/layout :: head">
+</head>
 <body>
-
+<div th:replace="fragments/layout :: menu('vets')"></div>
   <h2>Veterinarians</h2>
 
   <table id="vets" class="table table-striped">

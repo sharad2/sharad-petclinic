@@ -1,27 +1,27 @@
 <!doctype html>
-<html th:fragment="layout (template, menu)"
-	xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 
-<head>
+<head th:fragment="head">
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 
 <link rel="shortcut icon" type="image/x-icon"
-	th:href="@{/resources/images/favicon.png}">
+	th:href="@{/resources/images/favicon.png}" />
 
 <title>PetClinic :: a Spring Framework demonstration</title>
 
 
 <link rel="stylesheet" th:href="@{/resources/css/petclinic.css}" />
-
+<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+<script th:src="@{/webjars/jquery-ui/jquery-ui.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
 </head>
 
 <body>
-
-	<nav class="navbar navbar-default" role="navigation">
+	<nav class="navbar navbar-default" role="navigation" th:fragment="menu (active)">
 		<div class="container">
 			<div class="navbar-header">
 				<a class="navbar-brand" th:href="@{/}"><span></span></a>
@@ -34,34 +34,26 @@
 			</div>
 			<div class="navbar-collapse collapse" id="main-navbar">
 				<ul class="nav navbar-nav navbar-right">
-
-					<li th:fragment="menuItem (path,active,title,glyph,text)"
-						class="active" th:class="${active==menu ? 'active' : ''}"><a
-						th:href="@{__${path}__}" th:title="${title}"> <span
-							th:class="'glyphicon  glyphicon-'+${glyph}"
-							class="glyphicon glyphicon-home" aria-hidden="true"></span> <span
-							th:text="${text}">Template</span>
-					</a></li>
-
-					<li th:replace="::menuItem ('/','home','home page','home','Home')">
+					<li
+						th:include="fragments/menuitem :: menuItem ('/','home', ${active}, 'home page','home','Home')">
 						<span class="glyphicon glyphicon-home" aria-hidden="true"></span>
 						<span>Home</span>
 					</li>
 
 					<li
-						th:replace="::menuItem ('/owners/find','owners','find owners','search','Find owners')">
+						th:replace="fragments/menuitem::menuItem ('/owners/find','owners',${active}, 'find owners','search','Find owners')">
 						<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
 						<span>Find owners</span>
 					</li>
 
 					<li
-						th:replace="::menuItem ('/vets','vets','veterinarians','th-list','Veterinarians')">
+						th:replace="fragments/menuitem::menuItem ('/vets','vets',${active}, 'veterinarians','th-list','Veterinarians')">
 						<span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
 						<span>Veterinarians</span>
 					</li>
 
 					<li
-						th:replace="::menuItem ('/oups','error','trigger a RuntimeException to see how it is handled','warning-sign','Error')">
+						th:replace="fragments/menuitem::menuItem ('/oups','error',${active}, 'trigger a RuntimeException to see how it is handled','warning-sign','Error')">
 						<span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span>
 						<span>Error</span>
 					</li>
@@ -70,27 +62,6 @@
 			</div>
 		</div>
 	</nav>
-	<div class="container-fluid">
-		<div class="container xd-container">
-
-			<div th:replace="${template}"></div>
-
-			<br /> <br />
-			<div class="container">
-				<div class="row">
-					<div class="col-12 text-center">
-						<img src="../static/resources/images/spring-pivotal-logo.png"
-							th:src="@{/resources/images/spring-pivotal-logo.png}"
-							alt="Sponsored by Pivotal" />
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
-	<script th:src="@{/webjars/jquery-ui/jquery-ui.min.js}"></script>
-	<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
 
 </body>
 

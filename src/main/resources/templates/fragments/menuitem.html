@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1" />
+<title>Insert title here</title>
+</head>
+<body>
+	<ul>
+		<li th:fragment="menuItem (path,menu,active,title,glyph,text)"
+			class="active" th:class="${active==menu}? 'active'"><a
+			th:href="${path}" th:title="${title}"> <span
+				th:class="'glyphicon  glyphicon-'+${glyph}"
+				class="glyphicon glyphicon-home" aria-hidden="true"></span> <span
+				th:text="${text}">Template</span> 
+
+		</a></li>
+	</ul>
+</body>
+</html>

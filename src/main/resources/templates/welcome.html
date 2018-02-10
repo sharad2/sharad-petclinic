@@ -1,27 +1,34 @@
 <!DOCTYPE html>
 
-<html xmlns:th="http://www.thymeleaf.org"
-	th:replace="~{fragments/layout :: layout (~{::#main},'home')}">
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/layout :: head">
+</head>
 
 <body>
-	<div id="main">
-		<h2 th:text="#{welcome}">Welcome</h2>
-		<div class="row">
-			<div class="col-md-12">
-				<img class="img-responsive"
-					src="../static/resources/images/pets.png"
-					th:src="@{/resources/images/pets.png}" />
+	<div th:replace="fragments/layout :: menu ('home')"></div>
+	<div class="container-fluid">
+		<div class="container xd-container">
+			<div id="main">
+				<h2 th:text="#{welcome}">Welcome</h2>
+				<div class="row">
+					<div class="col-md-12">
+						<img class="img-responsive"
+							src="../static/resources/images/pets.png"
+							th:src="@{/resources/images/pets.png}" />
+					</div>
+				</div>
+				<ol>
+					<li><a href="/login/facebook">Facebook Login</a></li>
+					<li><a href="/login/github">Github Login</a></li>
+					<li>
+						<form action="/logout">
+							<button type="submit" class="btn btn-primary">Logout</button>
+						</form>
+					</li>
+				</ol>
 			</div>
 		</div>
-		<ol>
-			<li><a href="/login/facebook">Facebook Login</a></li>
-			<li><a href="/login/github">Github Login</a></li>
-			<li>
-				<form action="/logout">
-					<button type="submit" class="btn btn-primary">Logout</button>
-				</form>
-			</li>
-		</ol>
 	</div>
 </body>
 
