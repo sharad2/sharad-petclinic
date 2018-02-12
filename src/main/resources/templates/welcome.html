@@ -20,6 +20,19 @@
 				</div>
 				<ol>
 					<li><a href="/login/facebook">Facebook Login</a></li>
+					<li>
+
+						<form action="/connect/facebook" method="POST"
+							style="display: inline">
+							<input type="hidden" name="scope" value="public_profile,email" />
+							<button type="submit" class="btn btn-primary">
+								Facebook <span class="fa fa-facebook"></span>
+							</button>
+						</form>
+
+
+
+					</li>
 					<li><a href="/login/github">Github Login</a></li>
 					<li>
 						<form action="/logout">
