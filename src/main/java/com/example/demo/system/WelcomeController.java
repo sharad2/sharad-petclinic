@@ -32,6 +32,7 @@ class WelcomeController {
 
 	@RequestMapping(value = "/facebook", method = RequestMethod.GET)
 	public String loginToFacebook(Model model) {
-		return facebookProvider.getFacebookUserData(model, new UserBean());
+		String x = facebookProvider.getFacebookUserData(model, new UserBean());
+		return x;
 	}
 }

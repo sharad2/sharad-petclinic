@@ -1,5 +1,10 @@
 package com.example.demo;
 
+/*
+ * We will use the below google provider to authorize the user and then access Google Data.
+ * We will save the fetched user data into our UserBean.
+ */
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.social.connect.ConnectionRepository;
 import org.springframework.social.google.api.Google;

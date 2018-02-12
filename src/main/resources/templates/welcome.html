@@ -1,5 +1,9 @@
 <!DOCTYPE html>
-
+<!-- 
+To start we will create a view which will have 3 buttons each for Google, Facebook and Login.
+When the user will click on any of them he will be asked for authorization for the selected provider,
+upon verification his details will be rendered on the page.
+ -->
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head th:replace="fragments/layout :: head">
@@ -19,14 +23,13 @@
 					</div>
 				</div>
 				<ol>
-					<li><a href="/login/facebook">Facebook Login</a></li>
 					<li>
 
 						<form action="/connect/facebook" method="POST"
 							style="display: inline">
 							<input type="hidden" name="scope" value="public_profile,email" />
 							<button type="submit" class="btn btn-primary">
-								Facebook <span class="fa fa-facebook"></span>
+								Facebook Login<span class="fa fa-facebook"></span>
 							</button>
 						</form>
 

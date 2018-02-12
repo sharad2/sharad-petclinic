@@ -16,6 +16,11 @@
 
 package com.example.demo;
 
+/*
+ * Spring social do have a spring-social-google project but it doesn’t have autoconfiguration for Google.
+ * So google authorization doesn’t work with spring boot autoconfigure straight away.
+ * To enable autoconfigure of spring-social-google we need to Add a GoogleAutoConfiguration and Add GoogleProperties
+ */
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.boot.autoconfigure.AutoConfigureBefore;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;

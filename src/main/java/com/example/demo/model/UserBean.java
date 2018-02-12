@@ -1,6 +1,11 @@
 
 package com.example.demo.model;
 
+/*
+ * Once we verify the user via our social provider, we will show the user details on another page.
+ * We can store these details in a POJO called UserBean. Let us define a class called UserBean.java as shown below
+ * 
+ */
 import java.io.Serializable;
 
 public class UserBean implements Serializable{

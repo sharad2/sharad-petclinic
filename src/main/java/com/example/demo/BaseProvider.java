@@ -1,5 +1,14 @@
 package com.example.demo;
 
+/*
+ * For Facebook, Google and LinkedIn we will create a Provider class which will be used to do authentication
+ * and save user details to the UserBean, which can be later displayed on the page.
+ * To start off with we will create a BaseProvider which will have a constructor where all the providers will be initialized.
+
+ * This BaseProvider is created by injecting the Facebook, Google, LinkedIn and ConnectionRepository repository.
+ * These objects are a reference to Spring Social’s Facebook, Google, LinkedIn and ConnectionRepository API binding.
+ */
+
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;
